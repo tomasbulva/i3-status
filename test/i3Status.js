@@ -218,8 +218,8 @@ describe('i3Status', () => {
             var capture = concat((lines) => {
                 //header should be outputted and the first line with null values
                 expect(lines).to.equal('' +
-                    ',[{"name":"date","color":"#E0E0E0","full_text":" 13:37","short_text":" 13:37"},null]\n' +
-                    ',[{"name":"date","color":"#E0E0E0","full_text":" 13:37","short_text":" 13:37"},{"name":"seconds","color":"#ff00ff","full_text":" 42","short_text":" 42"}]\n'
+                    ',[{"name":"date","color":"#E0E0E0","full_text":" 13:37","short_text":" 13:37", "separator": true, "separator_block_width": 3 },null]\n' +
+                    ',[{"name":"date","color":"#E0E0E0","full_text":" 13:37","short_text":" 13:37", "separator": true, "separator_block_width": 9 },{"name":"seconds","color":"#ff00ff","full_text":" 42","short_text":" 42", "separator": true, "separator_block_width": 9 }]\n'
                 );
 
                 done();

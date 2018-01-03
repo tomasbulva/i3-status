@@ -7,6 +7,8 @@ blocks:
     label: 
     interval: 10
     text: '13:37'
+    separator: false # dissable default separator 
+    separator_block_width: 0 # separator block width in pixels
     click: gnome-calendar
   - name: seconds
     type: text
@@ -14,6 +16,8 @@ blocks:
     interval: 1
     color: '#ff00ff'
     text: '42'
+    separator: false # dissable default separator 
+    separator_block_width: 0 # separator block width in pixels
     click:
       left: gnome-calendar
       middle:

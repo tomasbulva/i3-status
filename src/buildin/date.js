@@ -32,8 +32,9 @@ export default class Date extends EventEmitter {
     update() {
         //update output
         var date = moment().format(this.format);
-        this.output.full_text = date;
-        this.output.short_text = date;
+        var visual = '<span><sup>' + date + '</sup></span>';
+        this.output.full_text = visual;
+        this.output.short_text = visual;
 
         //emit updated event to i3Status
         this.emit('updated', this, this.output);

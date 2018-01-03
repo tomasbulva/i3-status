@@ -29,6 +29,8 @@ export default class i3Status {
     constructor(options, output) {
         //check id config file is present
         var config = yaml.sync(options.config);
+        
+
         config.main = config.main || {};
         config.blocks = config.blocks || [];
 
@@ -101,13 +103,16 @@ export default class i3Status {
             config = crypto.decrypt(config);
 
             //use configured interval or fallback to main interval, convert to ms
-            config.interval = (config.interval || this.config.main.interval) * 1000;
+            config.interval = (config.interval || this.config.main.interval) * 1000;            
 
             //prepare default output
             var output = {
                 name: config.name,
                 color: config.color || this.config.main.color,
-                background: config.background || this.config.main.background
+                background: config.background || this.config.main.background,
+                separator: (config.hasOwnProperty('separator') && ! config.separator ) ? false : true,
+                separator_block_width: (config.hasOwnProperty('separator_block_width') && ! config.separator_block_width) ? 9 : config.separator_block_width,
+                markup: config.hasOwnProperty('markup') ? config.markup : 'none'
             };
 
             //load block
@@ -171,6 +176,7 @@ export default class i3Status {
             if (blocks[config.name]) {
                 throw new Error('duplicate block name found: ' + config.name);
             }
+
             blocks[config.name] = block;
         });
     }

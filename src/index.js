@@ -10,7 +10,7 @@ import Crypto from './crypto';
 
 //configure logger, log to .i3Status.log, disable console logger
 const logConfig = {
-    filename: '.i3Status.log'
+    filename: '/home/tomas/Projects/i3Status/.i3Status.log'
 };
 logger.add(logger.transports.File, logConfig);
 logger.remove(logger.transports.Console);

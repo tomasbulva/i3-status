@@ -1,0 +1,27 @@
+main:
+  color: '#FFFFFF'
+blocks:
+  - name: wifi               # show the current date/time e.g. Dec 19 12:34:56
+    module: /home/tomas/Projects/i3Status-net/lib/index.js    # use the builtin type date
+    label:                      # label for the block
+    interval: 10                # update interval in seconds
+    separator: false            # dissable default separator 
+    separator_block_width: 20   # separator block width in pixels
+    interface: wlan0
+    markup: 'pango'
+  - name: battery               # show the current date/time e.g. Dec 19 12:34:56
+    module: /home/tomas/Projects/i3Status-battery/lib/index.js    # use the builtin type date
+    label:                      # label for the block
+    interval: 10                # update interval in seconds
+    separator: false            # dissable default separator 
+    separator_block_width: 30   # separator block width in pixels
+    markup: 'pango'
+  - name: time                  # show the current date/time e.g. Dec 19 12:34:56
+    type: date                  # use the builtin type date
+    label:                      # label for the block
+    interval: 10                 # update interval in seconds
+    format: ddd HH:mm a         # format string, see http://momentjs.com/docs/#/parsing/string-format/
+    click: gnome-calendar       # open the gnome calendar on mouse clicks
+    separator: ''            # dissable default separator 
+    separator_block_width: 30   # separator block width in pixels
+    markup: 'pango'
