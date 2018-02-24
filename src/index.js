@@ -14,7 +14,7 @@ const logConfig = {
 };
 logger.add(logger.transports.File, logConfig);
 logger.remove(logger.transports.Console);
-logger.level = 'info';
+logger.level = 'debug';
 
 
 //define program options

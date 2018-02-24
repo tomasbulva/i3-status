@@ -1,5 +1,6 @@
 main:
   color: '#FFFFFF'
+  
 blocks:
   - name: wifi               # show the current date/time e.g. Dec 19 12:34:56
     module: /home/tomas/Projects/i3Status-net/lib/index.js    # use the builtin type date
@@ -16,6 +17,13 @@ blocks:
     separator: false            # dissable default separator 
     separator_block_width: 30   # separator block width in pixels
     markup: 'pango'
+  - name: volume                 # show the current date/time e.g. Dec 19 12:34:56
+    module: /home/tomas/Projects/i3Status-volume/lib/index.js    # use the builtin type date
+    label:                      # label for the block
+    interval: 1                 # update interval in seconds
+    separator: false            # dissable default separator 
+    separator_block_width: 30   # separator block width in pixels
+    markup: 'pango'
   - name: time                  # show the current date/time e.g. Dec 19 12:34:56
     type: date                  # use the builtin type date
     label:                      # label for the block
@@ -25,3 +33,20 @@ blocks:
     separator: ''            # dissable default separator 
     separator_block_width: 30   # separator block width in pixels
     markup: 'pango'
+
+reporter:
+    module: /home/tomas/Projects/i3Status-control-center/lib/index.js
+    timeout: 0
+    barHeight: 20
+    top: true
+    margin: 10
+    height: 200
+    width: 200
+    font:
+        family: Source Code Pro
+        size: 13
+    colors:
+        normalText: '#555555'
+        normalBackground: '#272824'
+        highlightText: '#e80088'
+        highlightBackground: '#171814'

@@ -30,6 +30,7 @@ export default class i3Status {
         //check id config file is present
         var config = yaml.sync(options.config);
         
+        //console.log('config',config.reporter);
 
         config.main = config.main || {};
         config.blocks = config.blocks || [];
@@ -233,7 +234,7 @@ export default class i3Status {
      * @private
      */
     pauseBlock(block) {
-        logger.debug('pause interval for ', block.__name);
+        //logger.debug('pause interval for ', block.__name);
         block.__interval = clearInterval(block.__interval);
     }
 
@@ -242,7 +243,7 @@ export default class i3Status {
      * @private
      */
     resumeBlock(block) {
-        logger.debug(`resume interval (${block.__interval_time}) for ${block.__name}`);
+        //logger.debug(`resume interval (${block.__interval_time}) for ${block.__name}`);
         block.__interval = setInterval(() => {
             block.update();
         }, block.__interval_time);
